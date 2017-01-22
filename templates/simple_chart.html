@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Experiment with Bokeh</title>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.css">
+</head>
+<body>
+
+<form method=get action="">
+    {% csrf_token %}
+    <input type="submit" value="Compute">
+</form>
+
+<p>
+    {% if the_script != None %}
+        <!-- script and div elements for Bokeh plot -->
+
+        {{ the_div|safe }}
+        {{ the_script|safe }}
+
+    {% endif %}
+</p>
+</body>
+</html>
