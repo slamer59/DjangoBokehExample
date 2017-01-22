@@ -1,6 +1,8 @@
 # Create your views here.
+from django.http import JsonResponse
 from django.shortcuts import render
 
+import pandas as pandas
 from bokeh.embed import autoload_server
 
 
@@ -9,6 +11,26 @@ def simple_chart(request):
 
     script = autoload_server(model=None,
                              app_path="/loadFileAndPlot",
+                             url="http://localhost:5006/")
+
+    return render(request, "simple_chart.html", {"the_script": script})
+
+
+def get_json(request):
+    csv_filename = 'BokehApp/data-1.csv'
+    # https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv
+    csvFile = pandas.read_csv(filepath_or_buffer=csv_filename, sep=";")
+    # with open(csv_filename, 'r') as csvfile:
+    #     csv_reader = csv.DictReader(csvfile)
+
+    return JsonResponse(csvFile.to_json(), safe=False)
+
+
+def stocks(request):
+    # bokeh serve --allow-websocket-origin=127.0.0.1:8001 selection_histogram.py
+
+    script = autoload_server(model=None,
+                             app_path="/stockMain",
                              url="http://localhost:5006/")
 
     return render(request, "simple_chart.html", {"the_script": script})

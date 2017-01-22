@@ -1,5 +1,3 @@
-import numpy as np
-
 from bokeh.io import curdoc
 from bokeh.layouts import layout
 from bokeh.models import ColumnDataSource, Div
@@ -24,7 +22,6 @@ p.line(x="x", y="y", source=source)
 
 
 def update_data():
-    dataCSV = np.genfromtxt('data.csv', delimiter=';', names=['x', 'y'])  # function to read specific file type
     source.data = dict(
         x=dataCSV['x'],
         y=dataCSV['y'],
