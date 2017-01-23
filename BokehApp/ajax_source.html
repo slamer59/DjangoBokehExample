@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ajax_source.py example</title>
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.css" type="text/css"/>
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bk-root">
+    <div class="bk-plotdiv" id="9a6c3ac3-282f-49ab-af51-fa07aa409245"></div>
+</div>
+
+<script type="text/javascript">
+    (function () {
+        var fn = function () {
+            Bokeh.safely(function () {
+                var docs_json = {
+                    "7215eea9-7112-4a3f-b8d5-c1598a964297": {
+                        "roots": {
+                            "references": [{
+                                "attributes": {
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }
+                                }, "id": "9fa19fca-4619-40cc-b0ad-4100e251299e", "type": "ResetTool"
+                            }, {
+                                "attributes": {
+                                    "overlay": {"id": "59d39630-b6b1-47a5-9c6a-8c951e57602e", "type": "BoxAnnotation"},
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }
+                                }, "id": "58a86d22-f486-4fc6-8004-a18f06d3f0f0", "type": "BoxZoomTool"
+                            }, {
+                                "attributes": {
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }
+                                }, "id": "b334381a-70fd-4ca3-8cad-825ececbc08e", "type": "HelpTool"
+                            }, {
+                                "attributes": {
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }
+                                }, "id": "4e5184bc-8c99-4a56-a61c-dcc4bf38dd9a", "type": "WheelZoomTool"
+                            }, {
+                                "attributes": {
+                                    "callback": null,
+                                    "column_names": ["y", "x"],
+                                    "data": {"x": [], "y": []},
+                                    "data_url": "http://localhost:8001/get_json",
+                                    "polling_interval": 100
+                                }, "id": "5dad9f9b-3420-4e11-b2e6-41f74cac5d3c", "type": "AjaxDataSource"
+                            }, {
+                                "attributes": {
+                                    "bottom_units": "screen",
+                                    "fill_alpha": {"value": 0.5},
+                                    "fill_color": {"value": "lightgrey"},
+                                    "left_units": "screen",
+                                    "level": "overlay",
+                                    "line_alpha": {"value": 1.0},
+                                    "line_color": {"value": "black"},
+                                    "line_dash": [4, 4],
+                                    "line_width": {"value": 2},
+                                    "plot": null,
+                                    "render_mode": "css",
+                                    "right_units": "screen",
+                                    "top_units": "screen"
+                                }, "id": "59d39630-b6b1-47a5-9c6a-8c951e57602e", "type": "BoxAnnotation"
+                            }, {
+                                "attributes": {
+                                    "fill_color": {"value": "#1f77b4"},
+                                    "line_color": {"value": "#1f77b4"},
+                                    "x": {"field": "x"},
+                                    "y": {"field": "y"}
+                                }, "id": "da4896ae-004d-4cf2-a53d-6ed9bdeb7670", "type": "Circle"
+                            }, {
+                                "attributes": {},
+                                "id": "f7b5bbe1-83b5-4bcf-b7b5-4487280e88d1",
+                                "type": "BasicTickFormatter"
+                            }, {
+                                "attributes": {
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }
+                                }, "id": "cb78245d-4e99-4b86-97ce-695bec5201ef", "type": "SaveTool"
+                            }, {
+                                "attributes": {},
+                                "id": "0dfff177-c5ae-46fc-8bfc-d18d609df6e8",
+                                "type": "BasicTicker"
+                            }, {
+                                "attributes": {
+                                    "formatter": {
+                                        "id": "03eac61c-5a4a-4414-ba21-86550f30ff4c",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    "ticker": {"id": "ac343e1f-cf92-406a-9c88-79d475be2278", "type": "BasicTicker"}
+                                }, "id": "91cc36af-6709-4d5e-8dc5-5d79ce90e938", "type": "LinearAxis"
+                            }, {
+                                "attributes": {
+                                    "dimension": 1,
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    "ticker": {"id": "ac343e1f-cf92-406a-9c88-79d475be2278", "type": "BasicTicker"}
+                                }, "id": "eebb71b6-9c0e-4e87-adb4-f1627dd147f3", "type": "Grid"
+                            }, {
+                                "attributes": {
+                                    "below": [{"id": "b9fa67c2-3b1c-4d23-8f93-eb843800fe9a", "type": "LinearAxis"}],
+                                    "left": [{"id": "91cc36af-6709-4d5e-8dc5-5d79ce90e938", "type": "LinearAxis"}],
+                                    "renderers": [{
+                                        "id": "b9fa67c2-3b1c-4d23-8f93-eb843800fe9a",
+                                        "type": "LinearAxis"
+                                    }, {
+                                        "id": "d0e74cc1-f3a2-470e-a800-6ff3f928f427",
+                                        "type": "Grid"
+                                    }, {
+                                        "id": "91cc36af-6709-4d5e-8dc5-5d79ce90e938",
+                                        "type": "LinearAxis"
+                                    }, {
+                                        "id": "eebb71b6-9c0e-4e87-adb4-f1627dd147f3",
+                                        "type": "Grid"
+                                    }, {
+                                        "id": "59d39630-b6b1-47a5-9c6a-8c951e57602e",
+                                        "type": "BoxAnnotation"
+                                    }, {"id": "0904e235-b72e-4c63-b81d-cbcb25f89d84", "type": "GlyphRenderer"}],
+                                    "title": {"id": "238769a9-a3f1-44b3-a48c-d162d213699e", "type": "Title"},
+                                    "tool_events": {"id": "540bb7ae-3139-41a4-854a-a5ca092039b5", "type": "ToolEvents"},
+                                    "toolbar": {"id": "137a0de0-10c5-4f31-b068-f74c26202b64", "type": "Toolbar"},
+                                    "x_range": {"id": "7cb89b9e-c999-41ac-9f23-b50dd6009f73", "type": "DataRange1d"},
+                                    "y_range": {"id": "8b55510b-1fd4-41da-bbf9-43e22142ad85", "type": "DataRange1d"}
+                                }, "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79", "subtype": "Figure", "type": "Plot"
+                            }, {
+                                "attributes": {"plot": null, "text": ""},
+                                "id": "238769a9-a3f1-44b3-a48c-d162d213699e",
+                                "type": "Title"
+                            }, {
+                                "attributes": {},
+                                "id": "540bb7ae-3139-41a4-854a-a5ca092039b5",
+                                "type": "ToolEvents"
+                            }, {
+                                "attributes": {"callback": null, "follow": "end", "follow_interval": 10},
+                                "id": "7cb89b9e-c999-41ac-9f23-b50dd6009f73",
+                                "type": "DataRange1d"
+                            }, {
+                                "attributes": {
+                                    "fill_alpha": {"value": 0.1},
+                                    "fill_color": {"value": "#1f77b4"},
+                                    "line_alpha": {"value": 0.1},
+                                    "line_color": {"value": "#1f77b4"},
+                                    "x": {"field": "x"},
+                                    "y": {"field": "y"}
+                                }, "id": "7ef9ed78-915d-45f6-800a-cafe968323a3", "type": "Circle"
+                            }, {
+                                "attributes": {
+                                    "active_drag": "auto",
+                                    "active_scroll": "auto",
+                                    "active_tap": "auto",
+                                    "tools": [{
+                                        "id": "fe0770c4-acf1-45ab-ae6e-1b8de070c86b",
+                                        "type": "PanTool"
+                                    }, {
+                                        "id": "4e5184bc-8c99-4a56-a61c-dcc4bf38dd9a",
+                                        "type": "WheelZoomTool"
+                                    }, {
+                                        "id": "58a86d22-f486-4fc6-8004-a18f06d3f0f0",
+                                        "type": "BoxZoomTool"
+                                    }, {
+                                        "id": "cb78245d-4e99-4b86-97ce-695bec5201ef",
+                                        "type": "SaveTool"
+                                    }, {
+                                        "id": "9fa19fca-4619-40cc-b0ad-4100e251299e",
+                                        "type": "ResetTool"
+                                    }, {"id": "b334381a-70fd-4ca3-8cad-825ececbc08e", "type": "HelpTool"}]
+                                }, "id": "137a0de0-10c5-4f31-b068-f74c26202b64", "type": "Toolbar"
+                            }, {
+                                "attributes": {"callback": null},
+                                "id": "8b55510b-1fd4-41da-bbf9-43e22142ad85",
+                                "type": "DataRange1d"
+                            }, {
+                                "attributes": {
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }
+                                }, "id": "fe0770c4-acf1-45ab-ae6e-1b8de070c86b", "type": "PanTool"
+                            }, {
+                                "attributes": {},
+                                "id": "ac343e1f-cf92-406a-9c88-79d475be2278",
+                                "type": "BasicTicker"
+                            }, {
+                                "attributes": {
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    }, "ticker": {"id": "0dfff177-c5ae-46fc-8bfc-d18d609df6e8", "type": "BasicTicker"}
+                                }, "id": "d0e74cc1-f3a2-470e-a800-6ff3f928f427", "type": "Grid"
+                            }, {
+                                "attributes": {
+                                    "data_source": {
+                                        "id": "5dad9f9b-3420-4e11-b2e6-41f74cac5d3c",
+                                        "type": "AjaxDataSource"
+                                    },
+                                    "glyph": {"id": "da4896ae-004d-4cf2-a53d-6ed9bdeb7670", "type": "Circle"},
+                                    "hover_glyph": null,
+                                    "nonselection_glyph": {
+                                        "id": "7ef9ed78-915d-45f6-800a-cafe968323a3",
+                                        "type": "Circle"
+                                    },
+                                    "selection_glyph": null
+                                }, "id": "0904e235-b72e-4c63-b81d-cbcb25f89d84", "type": "GlyphRenderer"
+                            }, {
+                                "attributes": {},
+                                "id": "03eac61c-5a4a-4414-ba21-86550f30ff4c",
+                                "type": "BasicTickFormatter"
+                            }, {
+                                "attributes": {
+                                    "formatter": {
+                                        "id": "f7b5bbe1-83b5-4bcf-b7b5-4487280e88d1",
+                                        "type": "BasicTickFormatter"
+                                    },
+                                    "plot": {
+                                        "id": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79",
+                                        "subtype": "Figure",
+                                        "type": "Plot"
+                                    },
+                                    "ticker": {"id": "0dfff177-c5ae-46fc-8bfc-d18d609df6e8", "type": "BasicTicker"}
+                                }, "id": "b9fa67c2-3b1c-4d23-8f93-eb843800fe9a", "type": "LinearAxis"
+                            }], "root_ids": ["6a71fbfd-5518-4d9d-a3b4-746f26a7db79"]
+                        }, "title": "Bokeh Application", "version": "0.12.4"
+                    }
+                };
+                var render_items = [{
+                    "docid": "7215eea9-7112-4a3f-b8d5-c1598a964297",
+                    "elementid": "9a6c3ac3-282f-49ab-af51-fa07aa409245",
+                    "modelid": "6a71fbfd-5518-4d9d-a3b4-746f26a7db79"
+                }];
+
+                Bokeh.embed.embed_items(docs_json, render_items);
+            });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    })();
+
+</script>
+</body>
+</html>

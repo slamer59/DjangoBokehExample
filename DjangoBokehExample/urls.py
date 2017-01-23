@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from bokehplot.views import simple_chart, get_json, stocks
+from bokehplot.views import simple_chart, get_json, stocks, get_csv
 from happiness.views import IndividualDashboardView, TeamDashboardView, AddHappinessView, HomeView
 
 urlpatterns = [
@@ -24,6 +24,11 @@ urlpatterns = [
     url(r'^simple_chart/$', simple_chart, name="simple_chart"),
     url(r'^get_json/$', get_json, name="get_json"),
     url(r'^stocks/$', stocks, name="stocks"),
+    # Upload
+    url(r'^upload/', include('upload.urls')),
+    # Match csv
+    url(r'^.*csv|xlsx$', get_csv, name="get_csv"),
+    # url(r'^$', RedirectView.as_view(url='/upload/list/', permanent=True)),
     url(r'^(?P<pk>[0-9]+)/individual/', IndividualDashboardView.as_view(), name='individual'),
     url(r'^(?P<pk>[0-9]+)/team/', TeamDashboardView.as_view(), name='team'),
     url(r'^(?P<pk>[0-9]+)/add_happiness/', AddHappinessView.as_view(), name='add_happiness'),
