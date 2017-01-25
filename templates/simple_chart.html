@@ -8,11 +8,6 @@
 </head>
 <body>
 
-<form method=get action="">
-    {% csrf_token %}
-    <input type="submit" value="Compute">
-</form>
-
 <p>
     {% if the_script != None %}
         <!-- script and div elements for Bokeh plot -->

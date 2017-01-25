@@ -23,10 +23,16 @@ from bokeh.models.widgets import Slider, TextInput
 from bokeh.plotting import figure
 
 # Set up data
+# args = curdoc().session_context.request.arguments
+#
+# try:
+#   N = int(args.get('N')[0])
+# except:
 N = 200
+
 x = np.linspace(0, 4 * np.pi, N)
 y = np.sin(x)
-source = ColumnDataSource(data=dict(x=x, y=y))
+source = ColumnDataSource(data=dict(x=x, y=y), name='source')
 
 # Set up plot
 plot = figure(plot_height=400, plot_width=400, title="my sine wave",
@@ -72,4 +78,5 @@ for w in [offset, amplitude, phase, freq]:
 inputs = widgetbox(text, offset, amplitude, phase, freq)
 
 curdoc().add_root(row(inputs, plot, width=800))
+curdoc().add_root(source)
 curdoc().title = "Sliders"

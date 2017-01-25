@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from bokehplot.views import simple_chart, get_json, stocks, get_csv
+from bokehplot.views import simple_chart, get_json, stocks, get_csv, sliders
 from happiness.views import IndividualDashboardView, TeamDashboardView, AddHappinessView, HomeView
 
 urlpatterns = [
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^simple_chart/$', simple_chart, name="simple_chart"),
     url(r'^get_json/$', get_json, name="get_json"),
     url(r'^stocks/$', stocks, name="stocks"),
+    url(r'^sliders/$', sliders, name="sliders"),
     # Upload
     url(r'^upload/', include('upload.urls')),
     # Match csv
